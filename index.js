@@ -2,10 +2,10 @@
 const express = require("express");
 const route = require("./router/userRouting");
 const productRouter = require("./router/productRouting");
-const validate = require("./midllerware/usermidller");
+const validateall = require("./midllerware/allMid");
 
 const app = express()
-app.use(validate)
+app.use(validateall)
 app.use("/", route)
 app.use("/", productRouter)
 
