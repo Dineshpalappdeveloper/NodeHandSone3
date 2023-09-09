@@ -3,6 +3,7 @@ const express = require("express");
 const route = require("./router/userRouting");
 const productRouter = require("./router/productRouting");
 const validateall = require("./midllerware/allMid");
+const Data = require("./router/data");
 
 const app = express()
 app.use(validateall)
@@ -25,6 +26,11 @@ app.get("/api/createProduct", (req, res) => {
     const { age, name, role } = req.query;
     res.send({ age, name, role })
 })
+
+app.get("/bihar", (req, res) => {
+    res.send(Data)
+})
+
 
 app.listen(port, () => {
     console.log("running on ", port);
