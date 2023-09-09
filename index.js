@@ -12,6 +12,11 @@ app.use("/", productRouter)
 
 const port = 3001;
 
+app.use(cors({
+    origin: "*"
+
+}))
+
 app.get("/", (req, res) => {
     res.send("This is about page ")
 })
@@ -29,6 +34,7 @@ app.get("/api/createProduct", (req, res) => {
 
 app.get("/bihar", (req, res) => {
     res.send(Data)
+    console.log(Data);
 })
 
 
